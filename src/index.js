@@ -1,3 +1,4 @@
+const apiKey = ''
 
 const city = document.getElementById('inputSearch').value;
 
