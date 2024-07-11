@@ -2,6 +2,11 @@
 
 :root{
     --color-focus: rgb(74, 162, 250);
+    --box-shadow: 0 0 4px rgb(153, 153, 153);
+    --border-radius: 5px;
+    --color-tempRow-time: rgb(133, 133, 133);
+    --color-tempRow-temp: rgb(109, 109, 109);
+    background: rgba(0, 185, 255, 0.1);
 }
 
 ::-webkit-scrollbar,
@@ -12,14 +17,18 @@
 body {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: .25fr 1fr 4fr .25fr;
+    grid-template-rows: 1fr 3fr 5fr 1fr;
     row-gap: 5vh;
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
     gap: 2vh;
     font-family: 'Roboto', sans-serif;
     -ms-overflow-style: none;
-
+    width: 100%;
+    max-width: 70vw;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: none;
 }
 
 body>*{
@@ -27,13 +36,14 @@ body>*{
 }
 
 #searchBar{
-    border: 3px solid brown;
     margin-top: 2vh;
     padding: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    /* box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius); */
 }
 
 #searchBar>#search{
@@ -76,7 +86,9 @@ body>*{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 3px solid purple;
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
 }
 
 #header>.left-panel{
@@ -96,9 +108,9 @@ body>*{
     margin-top: -5px;
 }
 
-#header>.left-panel>.location>.city{
+/* #header>.left-panel>.location>.city{
 
-}
+} */
 
 #header>.left-panel>.degree{
     font-size: 3rem;
@@ -107,12 +119,18 @@ body>*{
 #header>.right-panel{
     margin-right: 10px;
     text-align: right;
-    border: 1px solid red;
     font-weight: 600;
+
 }
 
-#header>.right-panel>.icon{
-    margin: 10px auto;
+/* #header>.right-panel>.iconDiv{
+
+} */
+
+#header>.right-panel>.iconDiv>#icon{
+    width: 50px;
+    height: 50px;
+    /* object-fit: cover; */
 }
 
 
@@ -127,6 +145,7 @@ body>*{
     align-items: center;
     justify-content: space-between;
     text-align: right;
+    gap: 10px;
 }
 
 #main {
@@ -134,16 +153,15 @@ body>*{
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 2fr;
     gap: 2vh;
+    height: max-content;
 }
 
 #main>.tempRow {
     display: flex;
     column-gap: 20px;
     justify-content: space-evenly;
-    border: 3px solid pink;
     align-items: center;
     flex-wrap: nowrap;
-
 }
 
 #main>.tempRow>.card {
@@ -155,24 +173,86 @@ body>*{
     width: max-content;
     height: max-content;
     padding: 10px;
+    height: 90%;
+    width: 100%;
 }
+
+
+
+#main>.tempRow>.card:first-child {
+    margin-left: 20px;
+}
+
+#main>.tempRow>.card:last-child {
+    margin-right: 20px;
+}
+
+#main>.tempRow>.card>.time-icon-temp{
+    display: grid;
+    place-items: center;
+    gap: 1vh;
+}
+
+#main>.tempRow>.card>.time-icon-temp>.time {
+    color: var(--color-tempRow-time);
+    font-size: 1.2rem;
+}
+
+#main>.tempRow>.card>.time-icon-temp>.temp {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+
 
 #main>.tempColumn{
     display: flex;
     flex-direction: column;
-    border: 3px solid orange;
+    border: none;
+}
+
+#main>.tempColumn,
+#main>.tempRow{
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }
 
 #main>.tempColumn>.card{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-
+    height: clamp(80px, 100px, 120px);
 }
 
 #main>.tempColumn>.card>*{
     border: 1px solid green;
-    padding: 20px;
+    padding: 20px;  
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
 }
+
+#main>.tempColumn>.card>.lowestTemp {
+    color: var(--color-tempRow-temp);
+    font-weight: 600;
+}
+
+#main>.tempColumn>.card:first-child>div:first-child{
+    border-top-left-radius: var(--border-radius);
+}
+ 
+#main>.tempColumn>.card:first-child>div:last-child{
+    border-top-right-radius: var(--border-radius);
+}
+
+#main>.tempColumn>.card:last-child>div:first-child{
+    border-bottom-left-radius: var(--border-radius);
+}
+
+#main>.tempColumn>.card:last-child>div:last-child{
+    border-bottom-right-radius: var(--border-radius);
+}
+
 
 #main>.tempColumn>.card>*:last-child{
     display: flex;
@@ -184,6 +264,8 @@ body>*{
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid gray;
     margin-bottom: 2vh;
+    border: none;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
 }

@@ -11,6 +11,14 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].bundle.js',
   },
+  mode: 'development', // or 'production'
+  devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 9000,
+      hot: true, // Enable Hot Module Replacement
+      watchContentBase: true
+  },
   devtool: 'source-map',
   module: {
     rules: [

@@ -1,9 +1,18 @@
-const apiKey = ''
+import '/src/style.css';
+import TempRow from './components/renderTempRowDetails.js';
+import Header from './components/header.js';
 
-const city = document.getElementById('inputSearch').value;
+document.addEventListener('DOMContentLoaded', () => {
+    const header = new Header();
+    header.display();
 
-const url = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`;
 
-async function fetch(){
-    const response = await fetch(url)
-}
+    const tempRow = new TempRow();
+    tempRow.render();
+
+    const searchButton = document.getElementById('magnifier');
+    searchButton.addEventListener('click', async () => {
+        await tempRow.render();
+    });
+
+});

@@ -4,8 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/style.css">
-    <script src="/src/index.js" defer></script>
+    <script src="/dist/index.bundle.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Weather API</title>
 </head>
@@ -28,13 +27,15 @@
 
         <div 
         class="right-panel">
-            <div class="icon">CloudIcon</div>
-            <div class="desc">Partly clouded</div>
+            <div class="iconDiv">
+                <img src="" alt="" id="icon">
+            </div>
+            <div class="desc"></div>
             <div class="h-l">
 
-                <div class="highest">H: 26°</div>
+                <div class="highest"></div>
 
-                <div class="lowest">L: 11°</div>
+                <div class="lowest"></div>
 
             </div>
         </div>
@@ -44,35 +45,35 @@
         <div class="tempRow">
             <div class="card">
                 <div class="time-icon-temp">
-                    <div class="time">00 Uhr</div>
+                    <div class="time" id="1">00 Uhr</div>
                     <div class="icon">CloudIcon</div>
                     <div class="temp">14°</div>
                 </div>
             </div>
             <div class="card">
                 <div class="time-icon-temp">
-                    <div class="time">00 Uhr</div>
+                    <div class="time" id="2">00 Uhr</div>
                     <div class="icon">CloudIcon</div>
                     <div class="temp">14°</div>
                 </div>
             </div>
             <div class="card">
                 <div class="time-icon-temp">
-                    <div class="time">00 Uhr</div>
+                    <div class="time" id="3">00 Uhr</div>
                     <div class="icon">CloudIcon</div>
                     <div class="temp">14°</div>
                 </div>
             </div>
             <div class="card">
                 <div class="time-icon-temp">
-                    <div class="time">00 Uhr</div>
+                    <div class="time" id="4">00 Uhr</div>
                     <div class="icon">CloudIcon</div>
                     <div class="temp">14°</div>
                 </div>
             </div>
             <div class="card">
                 <div class="time-icon-temp">
-                    <div class="time">00 Uhr</div>
+                    <div class="time" id="5">00 Uhr</div>
                     <div class="icon">CloudIcon</div>
                     <div class="temp">14°</div>
                 </div>
