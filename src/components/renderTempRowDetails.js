@@ -28,15 +28,19 @@ class TempRow {
                     }
                 }
 
-                console.log(hourArr);
+
+                const stringArr = hourArr.map(String); // Convert each element in hourArr to a string
+                const updatedStringArr = stringArr.map(hour => hour + ' Uhr'); // Concatenate ' Uhr' to each string
+                console.log(updatedStringArr);
+
+
 
                 return {
-
-                    time1 : document.getElementById('1').textContent = hourArr[0],
-                    time2 : document.getElementById('2').textContent = hourArr[1],
-                    time3 : document.getElementById('3').textContent = hourArr[2],
-                    time4 : document.getElementById('4').textContent = hourArr[3],
-                    time5 : document.getElementById('5').textContent = hourArr[4]
+                    time1: document.getElementById('1').textContent = updatedStringArr[0],
+                    time2: document.getElementById('2').textContent = updatedStringArr[1],
+                    time3: document.getElementById('3').textContent = updatedStringArr[2],
+                    time4: document.getElementById('4').textContent = updatedStringArr[3],
+                    time5: document.getElementById('5').textContent = updatedStringArr[4]
                 }
 
 
