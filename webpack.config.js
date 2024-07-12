@@ -6,6 +6,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
     index: './src/index.js',
+    fetchData: './src/components/fetchData.js',
+    geolocationAPI: './src/components/geolocationAPI.js',
+    header: './src/components/header.js',
+    tempRow: './src/components/renderTempRowDetails.js',
+    time: './src/components/updateTime.js'
   },
   output: {
     path: path.resolve(__dirname, 'dist'),

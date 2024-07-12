@@ -1,4 +1,5 @@
 import Data from '/src/components/fetchData';
+import ReverseGeocodeApi from './reverseGeocodeApi';
 
 class TempRow {
     async render() {
@@ -9,6 +10,7 @@ class TempRow {
 
             if (data) {
                 const currentTime = data.location.localtime;
+                console.log(currentTime);
                 const currentHour = parseInt(currentTime.slice(11, 13)); // Extract current hour as integer
 
                 const hourArr = [];
@@ -33,16 +35,19 @@ class TempRow {
                 const updatedStringArr = stringArr.map(hour => hour + ' Uhr'); // Concatenate ' Uhr' to each string
                 console.log(updatedStringArr);
 
-                
+                const reverseGeocodeApi = new ReverseGeocodeApi();
+                const data = await reverseGeocodeApi.convertCoordsToCityName();
 
+                const cityFromCoords = data.address.town;
 
+                // stpped here: need to updata all info by city and return that city
 
                 return {
                     time1: document.getElementById('1').textContent = updatedStringArr[0],
                     time2: document.getElementById('2').textContent = updatedStringArr[1],
                     time3: document.getElementById('3').textContent = updatedStringArr[2],
                     time4: document.getElementById('4').textContent = updatedStringArr[3],
-                    time5: document.getElementById('5').textContent = updatedStringArr[4]
+                    time5: document.getElementById('5').textContent = updatedStringArr[4],
                 }
 
 
