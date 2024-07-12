@@ -1,7 +1,8 @@
 ## Table of Contents
-- [Index] (#index.js file)
-- [FetchData] (#fetchData.js file)
-- [Header] (#header.js file)
+- [Table of Contents](#table-of-contents)
+- [index.js file](#indexjs-file)
+- [fetchData.js file](#fetchdatajs-file)
+- [header.js file](#headerjs-file)
 
 ## index.js file
 
