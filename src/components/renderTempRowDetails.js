@@ -33,6 +33,8 @@ class TempRow {
                 const updatedStringArr = stringArr.map(hour => hour + ' Uhr'); // Concatenate ' Uhr' to each string
                 console.log(updatedStringArr);
 
+                
+
 
 
                 return {
