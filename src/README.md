@@ -3,11 +3,11 @@
 - [FetchData] (#fetchData.js file)
 - [Header] (#header.js file)
 
-# index.js file
+## index.js file
 
 creates instances of the classes initialized in the modules when the DOM finished loading.
 
-# fetchData.js file
+## fetchData.js file
 
 - Class Data
 - Contains the API Key in a constructor
@@ -19,5 +19,5 @@ creates instances of the classes initialized in the modules when the DOM finishe
 - if any error occurs it will be caught and null will be returned
 - Data class is being exported to be used in other modules
 
-# header.js file
+## header.js file
 
